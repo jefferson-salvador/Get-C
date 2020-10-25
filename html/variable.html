@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jefferson Salvador">
+    <meta name="description" content="This is a website for tutorial of programming languages for those who wants to learn programming.">
+    <meta name="keywords" content="Tutorial, Java, CSS, HTML, Python, VB, C, C++">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Get-C | Variables</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container-fluid bg-light p-0">
+            <div class="container-fluid header" >
+                <nav class="navbar navbar-expand-lg navbar-dark py-0 font-weight-bold">
+                    <a href="../index.html" class="navbar-brand py-3 link-effect">GET-C</a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu" aria-expanded="false" aria-controls="navbarMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-3 sidebar pl-0 py-lg-5">
+                        <nav class="navbar navbar-expand-lg navbar-dark py-0 font-weight-bold pl-0">
+                            <div class="collapse navbar-collapse" id="navbarMenu">
+                                <ul class="navbar-nav flex-column w-100 panel-group py-3"  id="accordion">
+                                    <li class="nav-item mx-3 my-2">
+                                        <a href="getting-started.html" class="link-effect text-light">Getting Started</a>
+                                    </li>
+                                    <li class="nav-item mx-3 my-2">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span class="active">Basics</span>
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
+                                                <div class="panel-body">
+                                                    <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="for-loop.html"> <span>For loops</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="while-loop.html"> <span>While Loop</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="function.html"> <span>Functions</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="static.html"> <span>Statics</span> </a> </li>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item mx-3 my-2">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span>Advanced</span>
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <ul id="advanced" class="list-group panel-collapse collapse in" data-parent="#accordion" >
+                                                <div class="panel-body">
+                                                    <li class="list-group-item link-effect"> <a href="pointer.html"> <span>Pointers</span> </a></li>
+                                                    <li class="list-group-item link-effect"> <a href="structure.html"> <span>Structures</span> </a></li>
+                                                    <li class="list-group-item link-effect"> <a href="argument.html"> <span>Function Argument</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="anp.html"> <span>Arrays and Pointers</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="recursion.html"> <span>Recursion</span> </a> </li>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item mx-3 my-2">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#examples"> <span>Examples</span>
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
+                                                <div class="panel-body">
+                                                    <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
+                                                    <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
+                                                    <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="mult-float.html"> <span>Multiply Floats</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="ascii.html"> <span>Print ASCII</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="swap.html"> <span>Swap Numbers</span> </a> </li>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-xl-10 col-lg-9 p-5"  id="contents">
+                        <h1><b>Variables and Data Types</b></h1>
+                        <hr>
+                        <div class="pt-5">
+                            <h3> <b>Data Types</b></h3>
+                            <p>C has several types of variables, but there are a few basic types:</p>
+                            <ul class="ml-5">
+                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
+                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
+                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
+                                <li>Structures - will be explained later, in the Structures section.</li>
+                            </ul>
+
+                            <p>
+                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
+                            </p>
+                            <h3 class="pt-5"> <b>Variables</b></h3>
+                            <p>In programming, a variable is a container (storage area) to hold data.</p>
+                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
+                            <div class="codeblock">
+<code>
+    int playerScore = 95;
+
+</code>
+                            </div>
+                            <br>
+                            <p>
+                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
+                            </p>
+                            <p>
+                                The value of a variable can be changed, hence the name variable.
+                            </p>
+                            <div class="codeblock">
+<code>
+    char ch = 'a';
+    <span class="text-muted">// some code</span>
+    ch = 'l';
+
+</code>
+                            </div>
+                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
+
+                            <div class="codeblock">
+<code>
+    int a = 0, b = 1, c = 2, d = 3, e = 4;
+    a = b - c + d * e;
+    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
+
+</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid text-center text-light p-3 footer mt-5">
+            <img src="../images/logo2.png" alt="logo" height="50px">
+        </div>
+    </div>
+   
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
