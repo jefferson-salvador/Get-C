@@ -11,9 +11,18 @@ html, body{
     font-family: 'Montseratt', 'Arial', 'san-serif';
     scroll-behavior: smooth;
 }
+
+h1, h2, h3{
+    font-family: 'Mulish', 'Arial', 'san-serif';
+}
 a:hover{
     text-decoration: none;
     color: #fff;
+}
+
+.a2:hover{
+    text-decoration: none;
+    color: #000;
 }
 
 .list-group-item a{
@@ -91,7 +100,6 @@ a:hover{
 .myBtn{
     padding: 10px;
     background: linear-gradient(110deg,  #111 50%, #116466 50%);
-    font-weight: semi-bold;
     min-width: 200px;
     padding: 10px;
     border-radius: 0%;
@@ -100,7 +108,7 @@ a:hover{
 .myBtn2{
     padding: 10px;
     background: linear-gradient(110deg,rgb(32, 32, 32) 50%,  #116466 50%);
-    font-weight: semi-bold;
+    font-family: 'Mulish', 'Arial', 'san serif';
     min-width: 150px;
     border-radius: 0%;
     border: none;
@@ -188,11 +196,13 @@ a:hover{
 
 code{
     white-space: pre-wrap;
-    background-color: #e4e4e4;
+    background-color: #f5f2f0;
+    color: #07a;
+    font-family: "Lucida Console", Monaco, monospace;
 }
 
 .codeblock{
-    background-color: #e4e4e4;
+    background-color: #f5f2f0;
 }
 
 .panel{

@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | Structures</title>
 </head>
 <body>
     <div class="wrapper">
@@ -39,7 +39,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span class="active">Basics</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span>Basics</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -49,13 +49,13 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="for-loop.html"> <span>For loops</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="while-loop.html"> <span>While Loop</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="function.html"> <span>Functions</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="function.html"> <spa>Functions</spa> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="static.html"> <span>Statics</span> </a> </li>
                                                 </div>
                                             </ul>
@@ -65,7 +65,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span>Advanced</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span class="active">Advanced</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -76,7 +76,7 @@
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="pointer.html"> <span>Pointers</span> </a></li>
-                                                    <li class="list-group-item link-effect"> <a href="structure.html"> <span>Structures</span> </a></li>
+                                                    <li class="list-group-item link-effect"> <a href="structure.html"> <span class="active2">Structures</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="argument.html"> <span>Function Argument</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="dynamic.html"> <span>Dynamic Allocation</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="anp.html"> <span>Arrays and Pointers</span> </a> </li>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,56 +118,100 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>Structures</b></h1>
                         <hr>
                         <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
+                            <p>C structures are special, large variables which contain several named variables inside. Structures are the basic foundation for objects and classes in C. Structures are used for:</p>
                             <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
+                                <li>Serialization of data</li>
+                                <li>Passing multiple arguments in and out of functions through a single argument</li>
+                                <li>SData structures such as linked lists, binary trees, and more</li>
                             </ul>
-
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
+                            <p>The most basic example of structures are <b>points</b>, which are a single entity that contains two variables - <code>x</code> and <code>y</code>. Let's define a point:</p>
+                           
                             <div class="codeblock">
 <code>
-    int playerScore = 95;
+    struct point {
+        int x;
+        int y;
+    };
 
 </code>
                             </div>
                             <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
+                            <p>Now, let's define a new point, and use it. Assume the function <code>draw</code> receives a point and draws it on a screen. Without structs, using it would require two arguments - each for every coordinate:</p>
+                           
                             <div class="codeblock">
 <code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
+    <span class="text-muted">/* draws a point at 10, 5 */</span>
+    int x = 10;
+    int y = 5;
+    draw(x, y);
 
 </code>
                             </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
+                            <br>
+                            <p>Using structs, we can pass a point argument:</p>
+                           
                             <div class="codeblock">
 <code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
+    <span class="text-muted">/* draws a point at 10, 5 */</span>
+    struct point p;
+    p.x = 10;
+    p.y = 5;
+    draw(p);
 
 </code>
                             </div>
+                            <br>
+                            <p>To access the point's variables, we use the dot <code>.</code> operator.</p>
+                            <h3 class="pt-5"><b>Typedefs</b></h3>
+                            <p>Typedefs allow us to define types with a different name - which can come in handy when dealing with structs and pointers. In this case, we'd want to get rid of the long definition of a point structure. We can use the following syntax to remove the <code>struct</code> keyword from each time we want to define a new point:</p>
+                           
+                            <div class="codeblock">
+<code>
+    typedef struct {
+        int x;
+        int y;
+    } point;
+
+</code>
+                            </div>
+                            <br>
+                            <p>This will allow us to define a new point like this:</p>
+                           
+                            <div class="codeblock">
+<code>
+    point p;
+
+</code>
+                            </div>
+                            <br>
+                            <p>Structures can also hold pointers - which allows them to hold strings, or pointers to other structures as well - which is their real power. For example, we can define a vehicle structure in the following manner:</p>
+                           
+                            <div class="codeblock">
+<code>
+    typedef struct {
+        char * brand;
+        int model;
+    } vehicle;
+
+</code>
+                            </div>
+                            <br>
+                            <p>Since brand is a char pointer, the vehicle type can contain a string (which, in this case, indicates the brand of the vehicle).</p>
+                           
+                            <div class="codeblock">
+<code>
+    vehicle mycar;
+    mycar.brand = "Ford";
+    mycar.model = 2007;
+
+</code>
+                            </div>
+
                         </div>
                     </div>
                 </div>

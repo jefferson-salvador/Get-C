@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | While Loops</title>
 </head>
 <body>
     <div class="wrapper">
@@ -49,12 +49,12 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="for-loop.html"> <span>For loops</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="while-loop.html"> <span>While Loop</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="while-loop.html"> <span class="active2">While Loop</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="function.html"> <span>Functions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="static.html"> <span>Statics</span> </a> </li>
                                                 </div>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,53 +118,63 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>While Loops</b></h1>
                         <hr>
                         <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
-
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
+                            <p>While loops are similar to for loops, but have less functionality. A while loop continues executing the while block as long as the condition in the while remains true. For example, the following code will execute exactly ten times:</p>
                             <div class="codeblock">
 <code>
-    int playerScore = 95;
+    int n = 0;
+    while (n &lt; 10) {
+        n++;
+    }
 
 </code>
                             </div>
                             <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
+                            <p>While loops can also execute infinitely if a condition is given which always evaluates as true (non-zero):</p>
                             <div class="codeblock">
 <code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
+    while (1) {
+        <span class="text-muted">/* do something */</span>
+    }
 
 </code>
                             </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
+                            <h3 class="pt-5"><b>Loop Directives</b></h3>
+                            <p>There are two important loop directives that are used in conjunction with all loop types in C - the <code>break</code> and <code>continue</code> directives.</p>
+                            <p>The <code>break</code> directive halts a loop after ten loops, even though the while loop never finishes:</p>
                             <div class="codeblock">
 <code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
+    int n = 0;
+    while (1) {
+        n++;
+        if (n == 10) {
+            break;
+        }
+    }
+
+</code>
+                            </div>
+                            <br>
+                            <p>In the following code, the <code>continue</code> directive causes the <code>printf</code> command to be skipped, so that only even numbers are printed out:</p>
+                            <div class="codeblock">
+<code>
+    int n = 0;
+    while (n &lt; 10) {
+        n++;
+    
+        <span class="text-muted">/* check that n is odd */</span>
+        if (n % 2 == 1) {
+            /* go back to the start of the while block */
+            continue;
+        }
+    
+        <span class="text-muted">/* we reach this code only if n is even */</span>
+        printf("The number %d is even.\n", n);
+    }
 
 </code>
                             </div>

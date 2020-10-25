@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | Statics</title>
 </head>
 <body>
     <div class="wrapper">
@@ -49,14 +49,14 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="for-loop.html"> <span>For loops</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="while-loop.html"> <span>While Loop</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="function.html"> <span>Functions</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="static.html"> <span>Statics</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="function.html"> <spa>Functions</spa> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="static.html"> <span class="active2">Statics</span> </a> </li>
                                                 </div>
                                             </ul>
                                         </div>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,56 +118,69 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>Statics</b></h1>
                         <hr>
                         <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
+                            <p><code>static</code> is a keyword in the C programming language. It can be used with variables and functions.</p>
 
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
+                            <h3 class="pt-5"><b>Static Variable</b></h3>
+                            <p>By default, variables are local to the scope in which they are defined. Variables can be declared as static to increase their scope up to file containing them. As a result, these variables can be accessed anywhere inside a file.</p>
+                            <p>Consider the following scenario – we want to count the runners participating in a race:</p>
                             <div class="codeblock">
 <code>
-    int playerScore = 95;
+    #include &lt;stdio.h&gt;
+    int runner() {
+        int count = 0;
+        count++;
+        return count;
+    }
+    
+    int main()
+    {
+        printf("%d ", runner());
+        printf("%d ", runner());
+        return 0;
+    }
 
 </code>
                             </div>
                             <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
+                            <p>We will see that <code>count</code> is not updated because it is removed from memory as soon as the function completes. If <code>static</code> is used, however:</p>
                             <div class="codeblock">
 <code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
+    #include &lt;stdio.h&gt;
+    int runner()
+    {
+        static int count = 0;
+        count++;
+        return count;
+    }
+    
+    int main()
+    {
+        printf("%d ", runner());
+        printf("%d ", runner());
+        return 0;
+    }
 
 </code>
                             </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
 
+                            <h3 class="pt-5"><b>Static Function</b></h3>
+                            <p>By default, functions are global in C. If we declare a function with static, the scope of that function is reduced to the file containing it.</p>
+                            <p>The syntax looks like this:</p>
                             <div class="codeblock">
 <code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
+    static void fun(void) {
+        printf("I am a static function.");
+    }
 
 </code>
                             </div>
+                            <h3 class="pt-5"><b>Static vs. Global</b></h3>
+                            <p>While static variables have scope over the file containing them making them accessible only inside a given file, global variables can be accessed outside the file too.</p>
                         </div>
                     </div>
                 </div>

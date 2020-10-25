@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | For Loops</title>
 </head>
 <body>
     <div class="wrapper">
@@ -49,11 +49,11 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="for-loop.html"> <span>For loops</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="for-loop.html"> <span class="active2">For loops</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="while-loop.html"> <span>While Loop</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="function.html"> <span>Functions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="static.html"> <span>Statics</span> </a> </li>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,53 +118,44 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>For Loops</b></h1>
                         <hr>
                         <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
+                            <p>For loops in C are straightforward. They supply the ability to create a loop - a code block that runs multiple times. For loops require an iterator variable, usually notated as <code>i</code>.</p>
+                            <p>For loops give the following functionality:</p>
                             <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
+                                <li>Initialize the iterator variable using an initial value</li>
+                                <li>Check if the iterator has reached its final value</li>
+                                <li>Increases the iterator</li>
                             </ul>
-
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
+                            <p>For example, if we wish to iterate on a block for 10 times, we write:</p>
                             <div class="codeblock">
 <code>
-    int playerScore = 95;
+    int i;
+    for (i = 0; i &lt;   10; i++) {
+        printf("%d\n", i);
+    }
 
 </code>
                             </div>
                             <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
+                            <p>This block will print the numbers 0 through 9 (10 numbers in total).</p>
+                            <p>For loops can iterate on array values. For example, if we would want to sum all the values of an array, we would use the iterator i as the array index:</p>
+                            
                             <div class="codeblock">
 <code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
+    int array[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    int sum = 0;
+    int i;
 
-</code>
-                            </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
+    for (i = 0; i &lt; 10; i++) {
+        sum += array[i];
+    }
 
-                            <div class="codeblock">
-<code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
+    <span class="text-muted">/* sum now contains a[0] + a[1] + ... + a[9] */</span>
+    printf("Sum of the array is %d\n", sum);
 
 </code>
                             </div>

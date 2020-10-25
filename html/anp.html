@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | Arrays and Pointers</title>
 </head>
 <body>
     <div class="wrapper">
@@ -39,7 +39,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span class="active">Basics</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span>Basics</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -49,7 +49,7 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
@@ -65,7 +65,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span>Advanced</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span class="active">Advanced</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -79,7 +79,7 @@
                                                     <li class="list-group-item link-effect"> <a href="structure.html"> <span>Structures</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="argument.html"> <span>Function Argument</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="dynamic.html"> <span>Dynamic Allocation</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="anp.html"> <span>Arrays and Pointers</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="anp.html"> <span class="active2">Arrays and Pointers</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="recursion.html"> <span>Recursion</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="linked.html"> <span>Linked Lists</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="binary.html"> <span>Binary Trees</span> </a> </li>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,57 +118,137 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>Arrays and Pointers</b></h1>
                         <hr>
-                        <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
-
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
-                            <div class="codeblock">
+                        <p class="pt-5">In a previous tutorial on <a href="pointer" class="a2">Pointers</a>, you learned that a pointer to a given data type can store the address of any variable of that particular data type. For example, in the following code, the pointer variable <code>pc</code> stores the address of the character variable <code>c</code>.</p>
+                        
+                        <div class="codeblock">
 <code>
-    int playerScore = 95;
+    char c = 'A';
+    char *pc = &amp;c;
 
 </code>
-                            </div>
-                            <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
-                            <div class="codeblock">
-<code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
-
-</code>
-                            </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
-                            <div class="codeblock">
-<code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
-
-</code>
-                            </div>
                         </div>
+                        <br>
+                        <p>Here, <code>c</code> is a scalar variable that can store only a single value. However, you are already familiar with arrays that can hold multiple values of the same data type in a contiguously allocated memory block. So, you might wonder, can we have pointers to arrays too? Indeed, we can.</p>
+                        <p>Let us start with an example code and look at its output. We will discuss its behavior subsequently.</p>
+
+                        <div class="codeblock">
+<code>
+    char vowels[] = {'A', 'E', 'I', 'O', 'U'};
+    char *pvowels = &amp;vowels;
+    int i;
+
+    <span class="text-muted">// Print the addresses</span>
+    for (i = 0; i &lt; 5; i++) {
+        printf("&vowels[%d]: %u, pvowels + %d: %u, vowels + %d: %u\n", i, &vowels[i], i, pvowels + i, i, vowels + i);
+    }
+
+    <span class="text-muted">// Print the values</span>
+    for (i = 0; i &lt; 5; i++) {
+        printf("vowels[%d]: %c, *(pvowels + %d): %c, *(vowels + %d): %c\n", i, vowels[i], i, *(pvowels + i), i, *(vowels + i));
+    }
+
+</code>
+                        </div>
+                        <br>
+                        <p>A typical output of the above code is shown below.</p>
+                        <p>&vowels[0]: 4287605531, pvowels + 0: 4287605531, vowels + 0: 4287605531</p>
+                        <p>&vowels[1]: 4287605532, pvowels + 1: 4287605532, vowels + 1: 4287605532</p>
+                        <p>&vowels[2]: 4287605533, pvowels + 2: 4287605533, vowels + 2: 4287605533</p>
+                        <p>&vowels[3]: 4287605534, pvowels + 3: 4287605534, vowels + 3: 4287605534</p>
+                        <p>&vowels[4]: 4287605535, pvowels + 4: 4287605535, vowels + 4: 4287605535</p>
+                        <p>vowels[0]: A, *(pvowels + 0): A, *(vowels + 0): A</p>
+                        <p>vowels[1]: E, *(pvowels + 1): E, *(vowels + 1): E</p>
+                        <p>vowels[2]: I, *(pvowels + 2): I, *(vowels + 2): I</p>
+                        <p>vowels[3]: O, *(pvowels + 3): O, *(vowels + 3): O</p>
+                        <p>vowels[4]: U, *(pvowels + 4): U, *(vowels + 4): U</p>
+
+                        <p>As you rightly guessed, <code>&vowels[i]</code> gives the memory location of the ith element of the array <code>vowels</code>. Moreover, since this is a character array, each element occupies one byte so that the consecutive memory addresses are separated by a single byte. We also created a pointer, <code>pvowels</code>, and assigned the address of the array <code>vowels</code> to it. <code>pvowels + i</code> is a valid operation; although in general, this may not always be meaningful (explored further in Pointer Arithmetics ). In particular, the output shown above indicates that <code>&vowels[i]</code> and <code>pvowels + i</code> are equivalent. Feel free to alter the data types of the array and pointer variables to test this out.</p>
+
+                        <p>If you look carefully at the previous code, you will notice that we also used another apparently surprising notation: <code>vowels + i</code>. Moreover, <code>pvowels + i</code> and <code>vowels + i</code> returns the same thing — address of the ith element of the array <code>vowels</code>. On the other hand, <code>*(pvowels + i)</code> and <code>*(vowels + i)</code> both return the ith element of the array <code>vowels</code>. Why is that so?</p>
+
+                        <p>This is because the name of an array itself is a (constant) pointer to the first element of the array. In other words, the notations <code>vowels</code>, <code>&vowels[0]</code>, and <code>vowels + 0</code> all point to the same location.</p>
+
+                        <h3 class="pt-5"><b>Dynamic Memory Allocation for Arrays</b></h3>
+
+                        <p>By now we know that we can traverse an array using pointers. Moreover, we also know that we can dynamically allocate (contiguous) memory using blocks pointers. These two aspects can be combined to dynamically allocate memory for an array. This is illustrated in the following code.</p>
+
+                        <div class="codeblock">
+<code>
+    <span class="text-muted">// Allocate memory to store five characters</span>
+    int n = 5;
+    char *pvowels = (char *) malloc(n * sizeof(char));
+    int i;
+    
+    pvowels[0] = 'A';
+    pvowels[1] = 'E';
+    *(pvowels + 2) = 'I';
+    pvowels[3] = 'O';
+    *(pvowels + 4) = 'U';
+    
+    for (i = 0; i &lt; n; i++) {
+        printf("%c ", pvowels[i]);
+    }
+    
+    printf("\n");
+    
+    free(pvowels);
+
+</code>
+                        </div>
+                        <br>
+                        <p>In the above code, we allocated five contiguous bytes of memory to store five characters. Subsequently, we used array notations to traverse the blocks of memory as if <code>pvowels</code> is an array. However, remember that <code>pvowels</code> actually is a pointer. Pointers and arrays, in general, are not the same thing.</p>
+
+                        <p>So when is this useful? Remember that while declaring an array, the number of elements that it would contain must be known beforehand. Therefore, in some scenarios it might happen that the space allocated for an array is either too less than the desired space or too much more. However, by using dynamic memory allocation, one can allocate just as much memory as required by a program. Moreover, unused memory can be freed as soon as it is no longer required by invoking the <code>free()</code> function. On the down side, with dynamic memory allocation, one must responsibly call <code>free()</code> wherever relevant. Otherwise, memory leaks would occur.</p>
+
+                        <p>We conclude this tutorial by looking at dynamic memory allocation for a two-dimensional array. This can be generalized to n-dimensions in a similar way. Unlike one-dimensional arrays, where we used a pointer, in this case we require a pointer to a pointer, as shown below.</p>
+
+                        <div class="codeblock">
+<code>
+    int nrows = 2;
+    int ncols = 5;
+    int i, j;
+    
+    <span class="text-muted">// Allocate memory for nrows pointers</span>
+    char **pvowels = (char **) malloc(nrows * sizeof(char *));
+    
+    // For each row, allocate memory for ncols elements
+    pvowels[0] = (char *) malloc(ncols * sizeof(char));
+    pvowels[1] = (char *) malloc(ncols * sizeof(char));
+    
+    pvowels[0][0] = 'A';
+    pvowels[0][1] = 'E';
+    pvowels[0][2] = 'I';
+    pvowels[0][3] = 'O';
+    pvowels[0][4] = 'U';
+    
+    pvowels[1][0] = 'a';
+    pvowels[1][1] = 'e';
+    pvowels[1][2] = 'i';
+    pvowels[1][3] = 'o';
+    pvowels[1][4] = 'u';
+    
+    for (i = 0; i &lt; nrows; i++) {
+        for(j = 0; j &lt; ncols; j++) {
+            printf("%c ", pvowels[i][j]);
+        }
+    
+        printf("\n");
+    }
+    
+    <span class="text-muted">// Free individual rows</span>
+    free(pvowels[0]);
+    free(pvowels[1]);
+    
+    <span class="text-muted">// Free the top-level pointer</span>
+    free(pvowels);
+
+</code>
+                        </div>
+
                     </div>
                 </div>
             </div>

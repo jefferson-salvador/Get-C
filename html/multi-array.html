@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | Multidimentional Array</title>
 </head>
 <body>
     <div class="wrapper">
@@ -39,7 +39,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span class="active">Basics</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span>Basics</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -49,7 +49,7 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
@@ -65,7 +65,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span>Advanced</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span class="active">Advanced</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -74,7 +74,7 @@
                                             </div>
                                             <ul id="advanced" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
+                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span class="active2">Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="pointer.html"> <span>Pointers</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="structure.html"> <span>Structures</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="argument.html"> <span>Function Argument</span> </a> </li>
@@ -120,55 +120,95 @@
                         </nav>
                     </div>
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b class="text-wrap">Multi-Dimentional Array</b></h1>
                         <hr>
                         <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
-
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
+                            <p>In the previous tutorials on <a href="array.html" class="a2">Arrays</a>, we covered, well, arrays and how they work. The arrays we looked at were all one-dimensional, but C can create and use multi-dimensional arrays. Here is the general form of a multidimensional array declaration:</p>
                             <div class="codeblock">
 <code>
-    int playerScore = 95;
+    type name[size1][size2]...[sizeN];
+
+</code>
+                            </div>
+                            <br>
+                            <p>For example, here's a basic one for you to look at -</p>
+                            <div class="codeblock">
+<code>
+    int foo[1][2][3];
+
+</code>
+                            </div>
+                            <br>
+                            <p>or maybe this one -</p>
+                            <div class="codeblock">
+<code>
+    char vowels[1][5] = {
+        {'a', 'e', 'i', 'o', 'u'}
+    };
+
+</code>
+                            </div>
+                            <h3 class="pt-5"><b>Two-Dimentional Array</b></h3>
+                            <p>The simplest form of multidimensional array is the two-dimensional array. A two-dimensional array is pretty much a list of one-dimensional arrays. To declare a two-dimensional integer array of size [ x ][ y ], you would write something like this −</p>
+                            <div class="codeblock">
+<code>
+    type arrayName [x][y];
+
+</code>
+                            </div>
+                            <br>
+                            <p>Where <b>type</b> can be any C data type (int, char, long, long long, double, etc.) and <b>arrayName</b> will be a valid C identifier, or variable. A two-dimensional array can be considered as a table which will have [ x ] number of rows and [ y ] number of columns. A two-dimensional array a, which contains three rows and four columns can be shown and thought about like this −</p>
+                            <div>
+                                <img src="../images/two_dimensional_arrays.jpg" alt="2Darray" class="img-fluid">
+                            </div>
+                            <br>
+                            <p>In this sense, every element in the array a is identified by an element name in the form <b>a[i][j]</b>, where 'a' is the name of the array, and 'i' and 'j' are the indexes that uniquely identify, or show, each element in 'a'.</p>
+                            <p>And honestly, you really don't have to put in a [ x ] value really, because if you did something like this -</p>
+                            <div class="codeblock">
+<code>
+    char vowels[][5] = {
+        {'A', 'E', 'I', 'O', 'U'},
+        {'a', 'e', 'i', 'o', 'u'}
+    };
 
 </code>
                             </div>
                             <br>
                             <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
+                                the compiler would already know that there are two "dimensions" you could say, but, you need need <b>NEED</b> a [ y ] value!! The compiler may be smart, but it <i>will not know</i> how many integers, characters, floats, whatever you're using you have in the dimensions. Keep that in mind.
                             </p>
+                            <h3 class="pt-5"><b>Initializing Two-Dimensional Arrays</b></h3>
                             <p>
-                                The value of a variable can be changed, hence the name variable.
+                                Multidimensional arrays may be used by specifying bracketed[] values for each row. Below is an array with 3 rows and each row has 4 columns. To make it easier, you can forget the 3 and keep it blank, it'll still work.
                             </p>
                             <div class="codeblock">
 <code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
+    int a[3][4] = {  
+        {0, 1, 2, 3} ,   <span class="text-muted">/*  initializers for row indexed by 0 */</span>
+        {4, 5, 6, 7} ,   <span class="text-muted">/*  initializers for row indexed by 1 */</span>
+        {8, 9, 10, 11}   <span class="text-muted">/*  initializers for row indexed by 2 */</span>
+    };
 
 </code>
                             </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
+                            <br>
+                            <p>The inside braces, which indicates the wanted row, are optional. The following initialization is the same to the previous example −</p>
                             <div class="codeblock">
 <code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
+    int a[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11};
 
 </code>
                             </div>
+                            <h3 class="pt-5"><b>Accessing Two-Dimensional Array Elements</b></h3>
+                            <p>An element in a two-dimensional array is accessed by using the subscripts, i.e., row index and column index of the array. For example −</p>
+                            <div class="codeblock">
+<code>
+    int val = a[2][3];
+
+</code>
+                            </div>
+                            <br>
+                            <p>The above statement will take the 4th element from the 3rd row of the array.</p>
                         </div>
                     </div>
                 </div>

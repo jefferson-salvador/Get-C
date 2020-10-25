@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | Unions</title>
 </head>
 <body>
     <div class="wrapper">
@@ -39,7 +39,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span class="active">Basics</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span>Basics</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -49,7 +49,7 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
@@ -65,7 +65,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span>Advanced</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span class="active">Advanced</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -83,7 +83,7 @@
                                                     <li class="list-group-item link-effect"> <a href="recursion.html"> <span>Recursion</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="linked.html"> <span>Linked Lists</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="binary.html"> <span>Binary Trees</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="union.html"> <span>Unions</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="union.html"> <span class="active2">Unions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="p-arithmetic.html"> <span>Pointer Arithmetics</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="func-pointer.html"> <span>Function Pointers</span> </a> </li>
                                                 </div>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,57 +118,163 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>Unions</b></h1>
                         <hr>
-                        <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
+                        
+                        <p class="pt-5">C Unions are essentially the same as C Structures, except that instead of containing multiple variables each with their own memory a Union allows for multiple names to the same variable. These names can treat the memory as different types (and the size of the union will be the size of the largest type, + any padding the compiler might decide to give it)</p>
 
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
-                            <div class="codeblock">
+                        <p>So if you wanted to be able to read a variable's memory in different ways, for example read an integer one byte at a time, you could have something like this:</p>
+                        
+                        <div class="codeblock">
 <code>
-    int playerScore = 95;
+    union intParts {
+        int theInt;
+        char bytes[sizeof(int)];
+    };
 
 </code>
-                            </div>
-                            <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
-                            <div class="codeblock">
-<code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
-
-</code>
-                            </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
-                            <div class="codeblock">
-<code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
-
-</code>
-                            </div>
                         </div>
+
+                        <br>
+
+                        <p>Allowing you to look at each byte individually without casting a pointer and using pointer arithmetic:</p>
+                        
+                        <div class="codeblock">
+<code>
+    union intParts parts;
+    parts.theInt = 5968145; <span class="text-muted">// arbitrary number > 255 (1 byte)</span>
+    
+    printf("The int is %i\nThe bytes are [%i, %i, %i, %i]\n",
+    parts.theInt, parts.bytes[0], parts.bytes[1], parts.bytes[2], parts.bytes[3]);
+    
+    <span class="text-muted">// vs</span>
+    
+    int theInt = parts.theInt;
+    printf("The int is %i\nThe bytes are [%i, %i, %i, %i]\n",
+    theInt, *((char*)&theInt+0), *((char*)&theInt+1), *((char*)&theInt+2), *((char*)&theInt+3));
+    
+    <span class="text-muted">// or with array syntax which can be a tiny bit nicer sometimes</span>
+    
+    printf("The int is %i\nThe bytes are [%i, %i, %i, %i]\n",
+        theInt, ((char*)&theInt)[0], ((char*)&theInt)[1], ((char*)&theInt)[2], ((char*)&theInt)[3]);
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>Combining this with a structure allows you to create a "tagged" union which can be used to store multiple different types, one at a time.</p>
+                        
+                        <p>For example, you might have a "number" struct, but you don't want to use something like this:</p>
+                        
+                        <div class="codeblock">
+<code>
+    struct operator {
+        int intNum;
+        float floatNum;
+        int type;
+        double doubleNum;
+    };
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>Because your program has a lot of them and it takes a bit too much memory for all of the variables, so you could use this:</p>
+                        
+                        <div class="codeblock">
+<code>
+    struct operator {
+        int type;
+        union {
+          int intNum;
+          float floatNum;
+          double doubleNum;
+        } types;
+    };
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>Like this the size of the struct is just the size of the int <code>type</code> + the size of the largest type in the union (the double). Not a huge gain, only 8 or 16 bytes, but the concept can be applied to similar structs.</p>
+
+                        <p>use:</p>
+                        
+                        <div class="codeblock">
+<code>
+    operator op;
+    op.type = 0; <span class="text-muted">// int, probably better as an enum or macro constant</span>
+    op.types.intNum = 352;
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>Also, if you don't give the union a name then it's members are accessed directly from the struct:</p>
+                        
+                        <div class="codeblock">
+<code>
+    struct operator {
+        int type;
+        union {
+            int intNum;
+            float floatNum;
+            double doubleNum;
+        }; <span class="text-muted">// no name!</span>
+    };
+
+    operator op;
+    op.type = 0; <span class="text-muted">// int</span>
+    <span class="text-muted">// intNum is part of the union, but since it's not named you access it directly off the struct itself</span>
+    op.intNum = 352;
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>Another, perhaps more useful feature, is when you always have multiple variables of the same type, and you want to be able to use both names (for readability) and indexes (for ease of iteration), in that case you can do something like this:</p>
+                        
+                        <div class="codeblock">
+<code>
+    union Coins {
+        struct {
+            int quarter;
+            int dime;
+            int nickel;
+            int penny;
+        }; <span class="text-muted">// anonymous struct acts the same way as an anonymous union, members are on the outer container</span>
+        int coins[4];
+    };
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>In that example you can see that there is a struct which contains the four (common) coins in the United States.</p>
+
+                        <p>since the union makes the variables share the same memory the coins array matches with each int in the struct (in order):</p>
+                        
+                        <div class="codeblock">
+<code>
+    union Coins change;
+    for(int i = 0; i &lt; sizeof(change) / sizeof(int); ++i)
+    {
+        scanf("%i", change.coins + i); <span class="text-muted">// BAD code! input is always suspect!</span>
+    }
+    printf("There are %i quarters, %i dimes, %i nickels, and %i pennies\n",
+        change.quarter, change.dime, change.nickel, change.penny);
+
+</code>
+                        </div>
+
                     </div>
                 </div>
             </div>

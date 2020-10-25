@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | Strings</title>
 </head>
 <body>
     <div class="wrapper">
@@ -49,10 +49,10 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="string.html"> <span class="active2">Strings</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="for-loop.html"> <span>For loops</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="while-loop.html"> <span>While Loop</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="function.html"> <span>Functions</span> </a> </li>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,56 +118,91 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>Strings</b></h1>
                         <hr>
-                        <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
-
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
-                            <div class="codeblock">
+                        <h3 class="pt-5"><b>Defining Strings</b></h3>
+                        <p>Strings in C are actually arrays of characters. Although using pointers in C is an advanced subject, fully explained later on, we will use pointers to a character array to define simple strings, in the following manner:</p>
+                        <div class="codeblock">
 <code>
-    int playerScore = 95;
+    char * name = "John Smith";
 
 </code>
-                            </div>
-                            <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
-                            <div class="codeblock">
+                        </div>
+                        <br>
+                        <p>This method creates a string which we can only use for reading. If we wish to define a string which can be manipulated, we will need to define it as a local character array:</p>
+                        <div class="codeblock">
 <code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
+    char name[] = "John Smith";
 
 </code>
-                            </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
-                            <div class="codeblock">
+                        </div>
+                        <br>
+                        <p>This notation is different because it allocates an array variable so we can manipulate it. The empty brackets notation [] tells the compiler to calculate the size of the array automatically. This is in fact the same as allocating it explicitly, adding one to the length of the string:</p>
+                        <div class="codeblock">
 <code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
+    char name[] = "John Smith";
+    <span class="text-muted">/* is the same as */</span>
+    char name[11] = "John Smith";
 
 </code>
-                            </div>
+                        </div>
+                        <br>
+                        <p>The reason that we need to add one, although the string <code>John Smith</code> is exactly 10 characters long, is for the string termination: a special character (equal to 0) which indicates the end of the string. The end of the string is marked because the program does not know the length of the string - only the compiler knows it according to the code.</p>
+
+                        <h3 class="pt-5"><b>String Formatting with printf</b></h3>
+                        <p>We can use the <code>printf</code> command to format a string together with other strings, in the following manner:</p>
+                        <div class="codeblock">
+<code>
+    char * name = "John Smith";
+    int age = 27;
+    
+    <span class="text-muted">/* prints out 'John Smith is 27 years old.' */</span>
+    printf("%s is %d years old.\n", name, age);
+
+</code>
+                        </div>
+                        <br>
+                        <p>Notice that when printing strings, we must add a newline (<code>\n</code>) character so that our next <code>printf</code> statement will print in a new line.</p>
+
+                        <h3 class="pt-5"><b>String Length</b></h3>
+                        <p>The function '<code>strlen</code>' returns the length of the string which has to be passed as an argument:</p>
+                        <div class="codeblock">
+<code>
+    char * name = "Nikhil";
+    printf("%d\n",strlen(name))
+
+</code>
+                        </div>
+
+                        <h3 class="pt-5"><b>String Comparison</b></h3>
+                        <p>The function <code>strncmp</code> compares between two strings, returning the number 0 if they are equal, or a different number if they are different. The arguments are the two strings to be compared, and the maximum comparison length. There is also an unsafe version of this function called <code>strcmp</code>, but it is not recommended to use it. For example:</p>
+                        <div class="codeblock">
+<code>
+    char * name = "John";
+
+    if (strncmp(name, "John", 4) == 0) {
+        printf("Hello, John!\n");
+    } else {
+        printf("You are not John. Go away.\n");
+    }
+
+</code>
+                        </div>
+
+                        <h3 class="pt-5"><b>String Concatenation</b></h3>
+                        <p>The function '<code>strncat</code>' appends first n characters of src string to the destination string where n is min(n,length(src)); The arguments passed are destination string, source string, and n - maximum number of characters to be appended. For Example:</p>
+                        <div class="codeblock">
+<code>
+    char dest[20]="Hello";
+    char src[20]="World";
+    strncat(dest,src,3);
+    printf("%s\n",dest);
+    strncat(dest,src,20);
+    printf("%s\n",dest);
+
+</code>
                         </div>
                     </div>
                 </div>

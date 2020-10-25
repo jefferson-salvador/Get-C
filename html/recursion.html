@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | Recursion</title>
 </head>
 <body>
     <div class="wrapper">
@@ -39,7 +39,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span class="active">Basics</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span>Basics</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -49,7 +49,7 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
@@ -65,7 +65,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span>Advanced</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span class="active">Advanced</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -80,7 +80,7 @@
                                                     <li class="list-group-item link-effect"> <a href="argument.html"> <span>Function Argument</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="dynamic.html"> <span>Dynamic Allocation</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="anp.html"> <span>Arrays and Pointers</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="recursion.html"> <span>Recursion</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="recursion.html"> <span class="active2">Recursion</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="linked.html"> <span>Linked Lists</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="binary.html"> <span>Binary Trees</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="union.html"> <span>Unions</span> </a> </li>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,56 +118,51 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>Recursion</b></h1>
                         <hr>
-                        <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
 
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
-                            <div class="codeblock">
+                        <p class="pt-5">Recursion occurs when a function contains within it a call to itself. Recursion can result in very neat, elegant code that is intuitive to follow. It can also result in a very large amount of memory being used if the recursion gets too deep.</p>
+
+                        <p>Common examples of where recursion is used :</p>
+
+                        <ul class="ml-5">
+                            <li>Walking recursive data structures such as linked lists, binary trees, etc.</li>
+                            <li>Exploring possible scenarios in games such as chess</li>
+                        </ul>
+
+                        <p>Recursion always consists of two main parts. A terminating case that indicates when the recursion will finish and a call to itself that must make progress towards the terminating case.</p>
+                        
+                        <p>For example, this function will perform multiplication by recursively adding :</p>
+
+                        <div class="codeblock">
 <code>
-    int playerScore = 95;
+    #include &lt;stdio.h&gt;
+
+    unsigned int multiply(unsigned int x, unsigned int y)
+    {
+        if (x == 1)
+        {
+            <span class="text-muted">/* Terminating case */</span>
+            return y;
+        }
+        else if (x > 1)
+        {
+            <span class="text-muted">/* Recursive step */</span>
+            return y + multiply(x-1, y);
+        }
+
+        <span class="text-muted">/* Catch scenario when x is zero */</span>
+        return 0;
+    }
+
+    int main() {
+        printf("3 times 5 is %d", multiply(3, 5));
+        return 0;
+    }
 
 </code>
-                            </div>
-                            <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
-                            <div class="codeblock">
-<code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
-
-</code>
-                            </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
-                            <div class="codeblock">
-<code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
-
-</code>
-                            </div>
                         </div>
                     </div>
                 </div>

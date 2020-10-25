@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | Pointer Arithmetics</title>
 </head>
 <body>
     <div class="wrapper">
@@ -39,7 +39,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span class="active">Basics</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span>Basics</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -49,7 +49,7 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
@@ -65,7 +65,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span>Advanced</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span class="active">Advanced</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -84,7 +84,7 @@
                                                     <li class="list-group-item link-effect"> <a href="linked.html"> <span>Linked Lists</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="binary.html"> <span>Binary Trees</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="union.html"> <span>Unions</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="p-arithmetic.html"> <span>Pointer Arithmetics</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="p-arithmetic.html"> <span class="active2">Pointer Arithmetics</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="func-pointer.html"> <span>Function Pointers</span> </a> </li>
                                                 </div>
                                             </ul>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,57 +118,138 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>Pointer Arithmetics</b></h1>
                         <hr>
-                        <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
+                        
+                        <p class="pt-5">You previously learned what is a pointer and how to manipulate pointers. In this tutorial you will be learning the arithmetic operations on pointers. There are multiple arithmetic operations that can be applied on C pointers: ++, --, -, +</p>
 
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
-                            <div class="codeblock">
+                        
+                        <h3 class="pt-5"><b>Incrementing a Pointer with (++)</b></h3>
+
+                        <p>Just like any variable the ++ operation increases the value of that variable. In our case here the variable is a pointer hence when we increase its value we are increasing the address in the memory that pointer points to. Let's combine this operation with an array in our example:</p>
+                        
+                        <div class="codeblock">
 <code>
-    int playerScore = 95;
+    #include &lt;stdio.h&gt;
+
+    int main()
+    {
+        int intarray[5] = {10,20,30,40,50};
+    
+        int i;
+        for(i = 0; i &lt; 5; i++)
+            printf("intarray[%d] has value %d - and address @ %x\n", i, intarray[i], &intarray[i]);
+    
+        int *intpointer = &intarray[3]; <span class="text-muted">//point to the 4th element in the array</span>
+        printf("address: %x - has value %d\n", intpointer, *intpointer); <span class="text-muted">//print the address of the 4th element</span>
+    
+        intpointer++; <span class="text-muted">//now increase the pointer's address so it points to the 5th elemnt in the array</span>
+        printf("address: %x - has value %d\n", intpointer, *intpointer); <span class="text-muted">//print the address of the 5th element</span>
+    
+        return 0;
+    }
 
 </code>
-                            </div>
-                            <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
-                            <div class="codeblock">
-<code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
-
-</code>
-                            </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
-                            <div class="codeblock">
-<code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
-
-</code>
-                            </div>
                         </div>
+
+                        <h3 class="pt-5"><b>Decreasing Pointer with (--)</b></h3>
+
+                        <p>Just like in our previous example we increased the pointer's pointed-to address by one using the ++ operator, we can decrease the address pointed-to by one using the decrement operator (--).</p>
+                        
+                        <div class="codeblock">
+<code>
+    #include &lt;stdio.h&gt;
+
+    int main()
+    {
+        int intarray[5] = {10,20,30,40,50};
+    
+        int i;
+        for(i = 0; i &lt; 5; i++)
+            printf("intarray[%d] has value %d - and address @ %x\n", i, intarray[i], &intarray[i]);
+    
+        int *intpointer = &intarray[4]; <span class="text-muted">//point to the 5th element in the array</span>
+        printf("address: %x - has value %d\n", intpointer, *intpointer); <span class="text-muted">//print the address of the 5th element</span>
+    
+        intpointer--; <span class="text-muted">//now decrease the point's address so it points to the 4th element in the array</span>
+        printf("address: %x - has value %d\n", intpointer, *intpointer); <span class="text-muted">//print the address of the 4th element</span>
+    
+        return 0;
+    }
+
+</code>
+                        </div>
+
+                        <h3 class="pt-5"><b>Adding Pointers with (+)</b></h3>
+
+                        <p>We previously increased a pointer's pointed-to address by one. We can also increase it by an integer value such:</p>
+                        
+                        <div class="codeblock">
+<code>
+    #include &lt;stdio.h&gt;
+
+    int main()
+    {
+        int intarray[5] = {10,20,30,40,50};
+    
+        int i;
+        for(i = 0; i &lt; 5; i++)
+            printf("intarray[%d] has value: %d - and address @ %x\n", i, intarray[i], &intarray[i]);
+    
+        int *intpointer = &intarray[1]; <span class="text-muted">//point to the 2nd element in the array</span>
+        printf("address: %x - has value %d\n", intpointer, *intpointer); <span class="text-muted">//print the address of the 2nd element</span>
+    
+        intpointer += 2; <span class="text-muted">//now shift by two the point's address so it points to the 4th element in the array</span>
+        printf("address: %x - has value %d\n", intpointer, *intpointer); <span class="text-muted">//print the addres of the 4th element</span>
+    
+        return 0;
+    }
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>Note how in the output the address shifted by 8 steps in the memory. You might be wondering why? The answer is simple: Because our pointer is an int-pointer and the size of an int variable is 4 bytes the memory is shift-able by 4 blocks. In our code we shifted by 2 (added +2) to the initial address so that makes them 2 x 4 byte = 8.</p>
+
+                        <h3 class="pt-5"><b>Subtracting Pointers with (-)</b></h3>
+
+                        <p>Similarly we can subtract:</p>
+                        
+                        <div class="codeblock">
+<code>
+    #include &lt;stdio.h&gt;
+
+    int main()
+    {
+        int intarray[5] = {10,20,30,40,50};
+    
+        int i;
+        for(i = 0; i &lt; 5; i++)
+            printf("intarray[%d] has value: %d - and address @ %x\n", i, intarray[i], &intarray[i]);
+    
+        int *intpointer = &intarray[4]; <span class="text-muted">//point to the 5th element in the array</span>
+        printf("address: %x - has value %d\n", intpointer, *intpointer); <span class="text-muted">//print the address of the 5th element</span>
+    
+        intpointer -= 2; <span class="text-muted">//now shift by two the point's address so it points to the 3rd element in the array</span>
+        printf("address: %x - has value %d\n", intpointer, *intpointer); <span class="text-muted">//print the address of the 3rd element</span>
+    
+        return 0;
+    }
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>again the address is shifted by blocks of 4bytes (in case of int).</p>
+
+                        <h3 class="pt-5"><b>Other Operations</b></h3>
+
+                        <p>There are more operations such as comparison >, <, ==. The idea is very similar of comparing variables, but in this case we are comparing memory address.</p>
+
                     </div>
                 </div>
             </div>

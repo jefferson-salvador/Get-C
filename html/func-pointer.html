@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Get-C | Variables</title>
+    <title>Get-C | Function Pointer</title>
 </head>
 <body>
     <div class="wrapper">
@@ -39,7 +39,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span class="active">Basics</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#basics"> <span>Basics</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -49,7 +49,7 @@
                                             <ul id="basics" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
                                                     <li class="list-group-item link-effect"> <a href="hello-world.html"> <span>Hello, World</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span class="active2">Variables</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="variable.html"> <span>Variables</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="condition.html"> <span>Conditions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
@@ -65,7 +65,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span>Advanced</span>
+                                                    <a class="text-light panel-title link-effect" data-toggle="collapse" href="#advanced"> <span class="active">Advanced</span>
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
@@ -85,7 +85,7 @@
                                                     <li class="list-group-item link-effect"> <a href="binary.html"> <span>Binary Trees</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="union.html"> <span>Unions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="p-arithmetic.html"> <span>Pointer Arithmetics</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="func-pointer.html"> <span>Function Pointers</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="func-pointer.html"> <span class="active2">Function Pointers</span> </a> </li>
                                                 </div>
                                             </ul>
                                         </div>
@@ -103,7 +103,6 @@
                                             </div>
                                             <ul id="examples" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
-                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="hello.html"> <span>Hello, World!</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="print-int.html"> <span>Print Inputted Integer</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="add-int.html"> <span>Add Two Integers</span> </a> </li>
@@ -119,57 +118,111 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="col-xl-10 col-lg-9 p-5"  id="contents">
-                        <h1><b>Variables and Data Types</b></h1>
+                        <h1><b>Function Pointers</b></h1>
                         <hr>
-                        <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
+                        
+                        <p class="pt-5">Remember pointers? We used them to point to an array of chars then make a string out of them. Then things got more interesting when we learned how to control these pointers. Now it is time to do something even more interesting with pointers, using them to point to and call functions.</p>
 
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
-                            <div class="codeblock">
+                        <p>The first question that may come to your mind is why would we use pointers to call a function when we can simply call a function by its name: <code>function();</code> - that's a great question! Now imagine the <code>sort</code> function where you need to sort an array. Sometimes you want to order array elements in an ascending order or descending order. How would you choose? Function pointers!</p>
+
+                        
+                        <h3 class="pt-5"><b>Function Pointer Syntax</b></h3>
+
+                        <div class="codeblock">
 <code>
-    int playerScore = 95;
+    void (*pf)(int);
 
 </code>
-                            </div>
-                            <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
-                            <div class="codeblock">
-<code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
-
-</code>
-                            </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
-                            <div class="codeblock">
-<code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
-
-</code>
-                            </div>
                         </div>
+
+                        <br>
+
+                        <p>I agree with you. This definitely is very complicated, or so you may think. Let's re-read that code and try to understand it point by point. Read it inside-out. <code>*pf</code> is the pointer to a function. <code>void</code> is the return type of that function, and finally <code>int</code> is the argument type of that function. Got it? Good.</p>
+
+                        <p>Let's insert pointers into the function pointer and try to read it again:</p>
+                        
+                        <div class="codeblock">
+<code>
+    char* (*pf)(int*)
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>Again:</p>
+
+                        <ol class="ml-5">
+                            <li><code>*pf</code> is the function pointer.</li>
+                            <li><code>char*</code> is the return type of that function. </li>
+                            <li><code>int*</code> is the type of the argument.</li>
+                        </ol>
+
+                        <p>Ok enough with theory. Let's get our hands dirty with some real code. See this example:</p>
+                        
+                        <div class="codeblock">
+<code>
+    #include &lt;stdio.h&gt;
+    void someFunction(int arg)
+    {
+        printf("This is someFunction being called and arg is: %d\n", arg);
+        printf("Whoops leaving the function now!\n");
+    }
+    
+    main()
+    {
+        void (*pf)(int);
+        pf = &amp;someFunction;
+        printf("We're about to call someFunction() using a pointer!\n");
+        (pf)(5);
+        printf("Wow that was cool. Back to main now!\n\n");
+    }
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>Remember <code>sort()</code> we talked about earlier? We can do the same with it. Instead of ordering a set in an ascending way we can do the opposite using our own comparison function as follows:</p>
+                        
+                        <div class="codeblock">
+<code>
+    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt; <span class="text-muted">//for qsort()</span>
+    
+    int compare(const void* left, const void* right)
+    {
+        return (*(int*)right - *(int*)left);
+        <span class="text-muted">// go back to ref if this seems complicated: http://www.cplusplus.com/reference/cstdlib/qsort/</span>
+    }
+    main()
+    {
+        int (*cmp) (const void* , const void*);
+        cmp = &amp;compare;
+    
+        int iarray[] = {1,2,3,4,5,6,7,8,9};
+        qsort(iarray, sizeof(iarray)/sizeof(*iarray), sizeof(*iarray), cmp);
+    
+        int c = 0;
+        while (c &lt; sizeof(iarray)/sizeof(*iarray))
+        {
+            printf("%d \t", iarray[c]);
+            c++;
+        }
+    }
+
+</code>
+                        </div>
+
+                        <br>
+
+                        <p>Let's remember again. Why do we use function pointers?</p>
+                        <ol class="ml-5">
+                            <li>To allow programmers to use libraries for different usages -> "Flexibility"</li>
+                        </ol>
+
                     </div>
                 </div>
             </div>

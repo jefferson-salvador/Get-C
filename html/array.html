@@ -55,7 +55,6 @@
                                                     <li class="list-group-item link-effect"> <a href="string.html"> <span>Strings</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="for-loop.html"> <span>For loops</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="while-loop.html"> <span>While Loop</span> </a> </li>
-                                                    <li class="list-group-item link-effect"> <a href="array.html"> <span>Arrays</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="function.html"> <span>Functions</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="static.html"> <span>Statics</span> </a> </li>
                                                 </div>
@@ -75,11 +74,18 @@
                                             </div>
                                             <ul id="advanced" class="list-group panel-collapse collapse in" data-parent="#accordion" >
                                                 <div class="panel-body">
+                                                    <li class="list-group-item link-effect"> <a href="multi-array.html"> <span>Multidimentional Array</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="pointer.html"> <span>Pointers</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="structure.html"> <span>Structures</span> </a></li>
                                                     <li class="list-group-item link-effect"> <a href="argument.html"> <span>Function Argument</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="dynamic.html"> <span>Dynamic Allocation</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="anp.html"> <span>Arrays and Pointers</span> </a> </li>
                                                     <li class="list-group-item link-effect"> <a href="recursion.html"> <span>Recursion</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="linked.html"> <span>Linked Lists</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="binary.html"> <span>Binary Trees</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="union.html"> <span>Unions</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="p-arithmetic.html"> <span>Pointer Arithmetics</span> </a> </li>
+                                                    <li class="list-group-item link-effect"> <a href="func-pointer.html"> <span>Function Pointers</span> </a> </li>
                                                 </div>
                                             </ul>
                                         </div>
@@ -117,52 +123,38 @@
                         <h1><b>Arrays</b></h1>
                         <hr>
                         <div class="pt-5">
-                            <h3> <b>Data Types</b></h3>
-                            <p>C has several types of variables, but there are a few basic types:</p>
-                            <ul class="ml-5">
-                                <li>Integers - whole numbers which can be either positive or negative. Defined using <code>char</code>, <code>int</code>, <code>short</code>, <code>long</code> or <code>long long</code>.</li>
-                                <li>Unsigned integers - whole numbers which can only be positive. Defined using <code>unsigned char</code>, <code>unsigned int</code>, <code>unsigned short</code>, <code>unsigned long</code> or <code>unsigned long long</code>.</li>
-                                <li>Floating point numbers - real numbers (numbers with fractions). Defined using <code>float</code> and <code>double</code>.</li>
-                                <li>Structures - will be explained later, in the Structures section.</li>
-                            </ul>
-
-                            <p>
-                                The different types of variables define their bounds. A <code>char</code> can range only from -128 to 127, whereas a <code>long</code> can range from -2,147,483,648 to 2,147,483,647 (<code>long</code> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer).
-                            </p>
-                            <h3 class="pt-5"> <b>Variables</b></h3>
-                            <p>In programming, a variable is a container (storage area) to hold data.</p>
-                            <p>To indicate the storage area, each variable should be given a unique name (identifier). Variable names are just the symbolic representation of a memory location. For example:</p>
+                            <p>Arrays are special variables which can hold more than one value under the same variable name, organised with an index. Arrays are defined using a very straightforward syntax:</p>
+                            
                             <div class="codeblock">
 <code>
-    int playerScore = 95;
+    <span class="text-muted">/* defines an array of 10 integers */</span>
+    int numbers[10];
 
 </code>
                             </div>
                             <br>
-                            <p>
-                                Here, <code>playerScore</code> is a variable of <code>int</code> type. Here, the variable is assigned an integer value <code>95</code>.
-                            </p>
-                            <p>
-                                The value of a variable can be changed, hence the name variable.
-                            </p>
+                            <p>Accessing a number from the array is done using the same syntax. Notice that arrays in C are zero-based, which means that if we defined an array of size 10, then the array cells 0 through 9 (inclusive) are defined. <code>numbers[10]</code> is not an actual value.</p>
+                            
                             <div class="codeblock">
 <code>
-    char ch = 'a';
-    <span class="text-muted">// some code</span>
-    ch = 'l';
+    int numbers[10];
+
+    <span class="text-muted">/* populate the array */</span>
+    numbers[0] = 10;
+    numbers[1] = 20;
+    numbers[2] = 30;
+    numbers[3] = 40;
+    numbers[4] = 50;
+    numbers[5] = 60;
+    numbers[6] = 70;
+
+    <span class="text-muted">/* print the 7th number from the array, which has an index of 6 */</span>
+    printf("The 7th number in the array is %d", numbers[6]);
 
 </code>
                             </div>
-                            <p class="pt-3">Now, we can do some math. Assuming <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, and <code>e</code> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to <code>a</code>:</p>
-
-                            <div class="codeblock">
-<code>
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
-    printf("%d", a); <span class="text-muted">/* will print 1-2+3*4 = 11 */</span>
-
-</code>
-                            </div>
+                            <br>
+                            <p>Arrays can only have one type of variable, because they are implemented as a sequence of values in the computer's memory. Because of that, accessing a specific array cell is very efficient.</p>
                         </div>
                     </div>
                 </div>
