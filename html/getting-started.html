@@ -18,12 +18,25 @@
 <body>
     <div class="wrapper">
         <div class="container-fluid bg-light p-0">
-            <div class="container-fluid header" >
-                <nav class="navbar navbar-expand-lg navbar-dark py-0 font-weight-bold">
-                    <a href="../index.html" class="navbar-brand py-3 link-effect">GET-C</a>
-                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu" aria-expanded="false" aria-controls="navbarMenu">
+            <div id="myHeader">
+                <nav class="navbar navbar-expand-md navbar-dark py-0 font-weight-bold">
+                    <a href="../index.html" class="navbar-brand py-3 link-effect ">GET-C</a>
+                    <button class="navbar-toggler py3" data-toggle="collapse" data-target="#navbarMenu" aria-expanded="false" aria-controls="navbarMenu">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item mx-3 link-effect">
+                                <a href="../index.html#what" class="nav-link">Introduction</a>
+                            </li>
+                            <li class="nav-item mx-3 link-effect">
+                                <a href="../index.html#career" class="nav-link">Careers</a>
+                            </li>
+                            <li class="nav-item mx-3 link-effect">
+                                <a href="about.html" class="nav-link">About</a>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
             <div class="container-fluid">
@@ -90,7 +103,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="nav-item mx-3 my-2">
+                                    <!-- <li class="nav-item mx-3 my-2">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
@@ -112,7 +125,7 @@
                                                 </div>
                                             </ul>
                                         </div>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </nav>
@@ -124,11 +137,11 @@
                             <p>In order to make usable programs in C or C++, you will need a compiler. A compiler converts source code - the actual instructions typed by the programmer - into an executable file. Numerous compilers are available for C and C++.</p>
 
                         </div>
-                        <div class="row pt-5">
-                            <div class="col-lg-6">
-                                <img src="../images/CB.jpg" alt="codeblocks" width="100%">
+                        <div class="row my-5">
+                            <div class="col-xl-6">
+                                <img src="../images/CB.jpg" alt="codeblocks" class="img-fluid mb-5 shadow mx-auto">
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-xl-6">
                                 The very first thing you need to do, before starting out in C, is to make sure that you have a compiler. What is a compiler, you ask? A compiler turns the program that you write into an executable that your computer can actually understand and run. If you're taking a course, you probably have one provided through your school. If you're starting out on your own, your best bet is to use  <a href="http://www.codeblocks.org/downloads/26" target="_blank">Code::Blocks with MinGW</a>. If you're on Linux, you can use <a href="https://gcc.gnu.org/" target="_blank">gcc</a>, and if you're on Mac OS X, you can use <a href="https://developer.apple.com/xcode/"  target="_blank">XCode</a>. If you haven't yet done so, go ahead and get a compiler set up--you'll need it for the rest of the tutorial.
                             </div>
                         </div>
@@ -136,7 +149,7 @@
                 </div>
             </div>
         </div>
-
+    
         <div class="container-fluid text-center text-light p-3 footer mt-5">
             <img src="../images/logo2.png" alt="logo" height="50px">
         </div>

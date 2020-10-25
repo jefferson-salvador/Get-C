@@ -12,7 +12,7 @@ html, body{
     scroll-behavior: smooth;
 }
 
-h1, h2, h3{
+h1, h2, h3, h4{
     font-family: 'Mulish', 'Arial', 'san-serif';
 }
 a:hover{
@@ -160,6 +160,10 @@ a:hover{
     position: absolute;
 }
 
+.dev{
+    background-image: linear-gradient(to right, #45a29e , rgba(255, 255, 255, 0.007));
+}
+
 
 /* INTRO IN C */
 
@@ -208,6 +212,13 @@ code{
 .panel{
     background:unset;
 }
+
+/* ABOUT */
+
+#about-img{
+    width: 450px;
+}
+
 /* FOOTER */
 
 .footer{
@@ -240,5 +251,9 @@ code{
     .myBtn2{
         margin: 20px 0;
         text-align: center;
+    }
+
+    #about-img{
+        width: 100%;
     }
 }
